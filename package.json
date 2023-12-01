@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/duker221/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/duker221/frontend-project-46/actions)",
-  "main": "index.js",
+  "main": "gendiff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "commander": "^11.1.0"
+    "commander": "^11.1.0",
+    "fs": "^0.0.1-security",
+    "node": "^21.2.0"
   },
   "bin": {
     "gendiff": "/gendiff.js"
