@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import {compareFile} from './index.js'
+import {compareFile, genDiff} from './index.js'
 import { Command } from "commander";
+import _ from 'lodash'
 
 const program = new Command();
 
@@ -12,7 +13,7 @@ program
     .usage('[options] <filepath1> <filepath2>')
     .arguments('<filepath1> <filepath2>')
     .action((filepath1, filepath2) => {
-        compareFile(filepath1, filepath2);
+        console.log(genDiff(filepath1, filepath2));
     });
 
 program.parse(process.argv);
