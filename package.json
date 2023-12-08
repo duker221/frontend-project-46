@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "codeclimate": "jest --coverage && codeclimate-test-reporter < coverage/lcov.info"
   },
   "author": "",
   "license": "ISC",
