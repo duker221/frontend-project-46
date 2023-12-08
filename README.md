@@ -6,6 +6,9 @@
 
 
 
-### Compares two configuration files and shows a difference.
+### Compares two JSON files and shows a difference
 [![asciicast](https://asciinema.org/a/WLoGiscItBBbf8AUSdfKdtCQS.svg)](https://asciinema.org/a/WLoGiscItBBbf8AUSdfKdtCQS)
+
+### Compares two YAML files and shows a difference
+[![asciicast](https://asciinema.org/a/9Zzv7qBsZTPxopkrn0DQcczGE.svg)](https://asciinema.org/a/9Zzv7qBsZTPxopkrn0DQcczGE)
 
