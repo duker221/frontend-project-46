@@ -11,4 +11,4 @@ lint:
 	npx eslint .
 
 test-coverage:
-    jest --coverage
+		npx jest --coverage
