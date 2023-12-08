@@ -1,2 +1,2 @@
-exclude_paths:
-  - "coverage/*"
+#exclude_paths:
+#  - "coverage/*"
