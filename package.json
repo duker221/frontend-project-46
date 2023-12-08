@@ -5,7 +5,8 @@
   "main": "gendiff.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
