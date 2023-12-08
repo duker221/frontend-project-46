@@ -28,4 +28,5 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: npm run codeclimate
+          coverageCommand: make test-coverage
+          debug: true
