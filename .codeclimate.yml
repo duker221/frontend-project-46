@@ -1,2 +1,8 @@
-#exclude_paths:
-#  - "coverage/*"
+version: '2'
+plugins:
+  eslint:
+    enabled: true
+  jest:
+    enabled: true
+exclude_paths:
+  - "coverage/*"
