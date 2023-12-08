@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'url';
 import * as path from 'path';
-import { genDiff, compareFile } from '../index.js';
+import { genDiff } from '../index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,4 +15,3 @@ test('Compares two configuration files and shows a difference', () => {
 
   expect(actualDiff).toEqual(expectedDiff);
 });
-
