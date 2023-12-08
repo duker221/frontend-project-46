@@ -22,11 +22,10 @@ jobs:
 
       - name: Run tests
         run: npm test
-
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPO_TOKEN }}
         with:
-           coverageCommand: make test-coverage
-           debug: true
+          coverageCommand: make test-coverage
+          debug: true
