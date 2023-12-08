@@ -26,4 +26,4 @@ jobs:
       - name: Publish code coverage to Code Climate
         run: npm run codeclimate
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CODECLIMATE_REPO_TOKEN: ${{ secrets.CODECLIMATE_REPO_TOKEN }}
