@@ -3,7 +3,7 @@ import yaml from 'js-yaml';
 
 const parseFile = (filePath) => {
   const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const extension = filePath.split('.').pop().toLowerCase();
+  const extension = filePath.split('.').slice(-1)[0].toLowerCase();
 
   switch (extension) {
     case 'json':
