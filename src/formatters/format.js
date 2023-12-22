@@ -1,11 +1,11 @@
-import stylishTreeFormat from './stylish.js'
+import stylishTreeFormat from './stylish.js';
 import plainFormatter from './plain.js';
 import formatJson from './json.js';
 
 const formatters = {
   stylish: stylishTreeFormat,
   plain: plainFormatter,
-  json: formatJson
+  json: formatJson,
 };
 
 const getFormatter = (formatName) => {

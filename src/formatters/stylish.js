@@ -46,9 +46,7 @@ export const stylishTree = (tree, depth = 1) => {
     default:
       throw new Error(`Unknown type: ${tree.type}`);
   }
-
 };
-
 
 const stylishTreeFormat = (data) => {
   const result = data.map((tree) => stylishTree(tree, 1));

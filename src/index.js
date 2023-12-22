@@ -1,5 +1,4 @@
 import parseFile from './parsers.js';
-import stylishTreeFormat from './formatters/stylish.js';
 import buildDiff from './buildDifferenceTree.js';
 import getFormatter from './formatters/format.js';
 

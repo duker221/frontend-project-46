@@ -22,7 +22,7 @@ describe('genDiff', () => {
     const filepath1 = getFixturePath(file1);
     const filepath2 = getFixturePath(file2);
     const expectedResult = getExpectedResult(expectedResultFile);
-  
+
     expect(genDiff(filepath1, filepath2, format, parseFile)).toEqual(expectedResult);
   });
 });
