@@ -4,10 +4,7 @@
   "description": "[![Actions Status](https://github.com/duker221/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/duker221/frontend-project-46/actions)",
   "main": "bin/gendiff.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "coverage": "jest --coverage",
-    "codeclimate": "jest --coverage && codeclimate-test-reporter < coverage/lcov.info"
+    "test": "npx jest"
   },
   "author": "",
   "license": "ISC",
