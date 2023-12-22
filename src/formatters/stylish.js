@@ -48,6 +48,7 @@ const stylishTree = (tree, depth = 1) => {
   }
 };
 
+
 export default (data) => {
   const result = data.map((tree) => stylishTree(tree, 1));
   return `{\n${result.join('\n')}\n}`;
