@@ -1,32 +1,17 @@
-import fs from 'fs';
-import _ from 'lodash';
 import parseFile from './parsers.js';
+import stylishTree from './formatters/stylish.js';
+import buildDiff from './buildDifferenceTree.js';
+import getFormatter from './formatters/format.js';
 
-const compareFile = (filepath1, filepath2) => {
-  const file1Data = JSON.parse(fs.readFileSync(filepath1));
-  const file2Data = JSON.parse(fs.readFileSync(filepath2));
-  console.log(file1Data);
-  console.log(file2Data);
+const genDiff = (filePath1, filePath2, formatter = stylishTree) => {
+  const file1Data = parseFile(filePath1);
+  const file2Data = parseFile(filePath2);
+
+  const diff = buildDiff(file1Data, file2Data);
+  const formatType = getFormatter(formatter);
+
+  const result = formatType(diff);
+  return result;
 };
 
-const genDiff = (obj1, obj2) => {
-  const file1Data = parseFile(obj1);
-  const file2Data = parseFile(obj2);
-
-  const keys = _.union(_.keys(file1Data), _.keys(file2Data));
-  keys.sort();
-  const result = keys.map((key) => {
-    if (_.has(file1Data, key) && !_.has(file2Data, key)) {
-      return `- ${key}: ${file1Data[key]}`;
-    } if (!_.has(file1Data, key) && _.has(file2Data, key)) {
-      return `+ ${key}: ${file2Data[key]}`;
-    } if (_.isEqual(file1Data[key], file2Data[key])) {
-      return `  ${key}: ${file1Data[key]}`;
-    }
-    return `- ${key}: ${file1Data[key]}\n+ ${key}: ${file2Data[key]}`;
-  });
-
-  return `{\n${result.join('\n')}\n}`;
-};
-
-export { compareFile, genDiff };
+export default genDiff;

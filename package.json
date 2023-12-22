@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/duker221/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/duker221/frontend-project-46/actions)",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
@@ -16,11 +16,12 @@
     "commander": "^11.1.0",
     "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
+    "json-stable-stringify": "^1.1.0",
     "lodash": "^4.17.21",
     "node": "^21.2.0"
   },
   "bin": {
-    "gendiff": "/gendiff.js"
+    "gendiff": "bin/gendiff.js"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "^0.5.1",
