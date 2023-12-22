@@ -3,7 +3,7 @@ import * as path from 'path';
 import fs from 'fs';
 import genDiff from '../src/index.js';
 import parseFile from '../src/parsers.js';
-import { stylishTree } from '../src/formatters/stylish.js';
+import { stylishTreeFormat } from '../src/formatters/stylish.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,6 +24,6 @@ describe('genDiff', () => {
     const filepath2 = getFixturePath(file2);
     const expectedResult = getExpectedResult(expectedResultFile);
 
-    expect(genDiff(filepath1, filepath2, format, parseFile, stylishTree)).toEqual(expectedResult);
+    expect(genDiff(filepath1, filepath2, format, parseFile, stylishTreeFormat)).toEqual(expectedResult);
   });
 });
