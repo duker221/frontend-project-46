@@ -11,16 +11,13 @@
   "type": "module",
   "dependencies": {
     "commander": "^11.1.0",
-    "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
-    "json-stable-stringify": "^1.1.0",
     "lodash": "^4.17.21"
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "^0.5.1",
     "eslint": "^8.55.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",

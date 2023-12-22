@@ -1,4 +1,4 @@
-import stylishTree from './stylish.js'
+import { stylishTree } from './stylish.js'
 import plainFormatter from './plain.js';
 import formatJson from './json.js';
 
