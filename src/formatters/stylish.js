@@ -25,7 +25,7 @@ const stringify = (value, depth = 1) => {
   return `{\n${keys.join('\n')}\n  ${makeIndent(depth)}}`;
 };
 
-const stylishTree = (tree, depth = 1) => {
+export const stylishTree = (tree, depth = 1) => {
   switch (tree.type) {
     case 'added':
     case 'removed':
