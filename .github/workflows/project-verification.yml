@@ -1,4 +1,4 @@
-name: GitHub Actions
+name: Project verification
 on: [push]
 jobs:
   test:
