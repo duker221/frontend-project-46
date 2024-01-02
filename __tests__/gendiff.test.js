@@ -7,7 +7,7 @@ import parseFile from '../src/parsers.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '_fixtures_', filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
 const getExpectedResultFilename = (file1, file2, outputFormat) => {
   const extension = outputFormat === 'json' ? 'json' : 'txt';

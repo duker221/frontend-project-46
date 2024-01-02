@@ -1,11 +1,16 @@
+import _ from 'lodash';
+
 const formatValue = (value) => {
   if (value === null) {
     return 'null';
   }
-  if (typeof value === 'object' && !Array.isArray(value)) {
+  if (_.isString(value)) {
+    return `'${value}'`;
+  }
+  if (_.isPlainObject(value)) {
     return '[complex value]';
   }
-  return typeof value === 'string' ? `'${value}'` : value;
+  return value;
 };
 
 const plainFormatter = (diff, parentKey = '') => {

@@ -1,10 +1,9 @@
-import fs from 'fs';
+// parseFile.js
 import yaml from 'js-yaml';
-
-const getFileExtension = (filePath) => filePath.split('.').slice(-1)[0].toLowerCase();
+import { getFileContent, getFileExtension } from './utils.js';
 
 const parseFile = (filePath) => {
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const fileContent = getFileContent(filePath);
   const extension = getFileExtension(filePath);
 
   switch (extension) {
@@ -14,7 +13,7 @@ const parseFile = (filePath) => {
     case 'yml':
       return yaml.load(fileContent);
     default:
-      throw new Error(`Unsupported file format: ${extension}`);
+      throw new Error(`Unsupported file format "${extension}".`);
   }
 };
 
