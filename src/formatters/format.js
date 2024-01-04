@@ -3,23 +3,17 @@ import plainFormatter from './plain.js';
 import formatJson from './json.js';
 
 const getFormatter = (formatName) => {
-  let selectedFormatter;
 
   switch (formatName) {
     case 'stylish':
-      selectedFormatter = stylishTreeFormat;
-      break;
+      return stylishTreeFormat;
     case 'plain':
-      selectedFormatter = plainFormatter;
-      break;
+      return plainFormatter;
     case 'json':
-      selectedFormatter = formatJson;
-      break;
+      return formatJson;
     default:
       throw new Error(`Unsupported format: ${formatName}`);
   }
-
-  return selectedFormatter;
 };
 
 export default getFormatter;
