@@ -9,29 +9,24 @@ const __dirname = path.dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const getExpectedResultFilename = (file1, file2, outputFormat) => {
-  const extension = outputFormat === 'json' ? 'json' : 'txt';
-  return `${outputFormat}_result.${extension}`;
-};
+const getExpectedResultFilename = (outputFormat) => `${outputFormat}_result.txt`;
+
+
 
 const getExpectedResult = (file1, file2, outputFormat) => {
-  const expectedResultFilename = getExpectedResultFilename(file1, file2, outputFormat);
+  const expectedResultFilename = getExpectedResultFilename(outputFormat);
   return fs.readFileSync(getFixturePath(expectedResultFilename), 'utf-8');
 };
 
-const formats = ['stylish', 'plain', 'json'];
 const fileFormats = ['json', 'yml'];
+const outputFormats = ['stylish', 'plain', 'json'];
 
-describe.each(formats)('genDiff with format %s', (outputFormat) => {
-  describe.each(fileFormats)('genDiff with file format %s', (fileFormat) => {
-    test.each([
-      ['file1', 'file2'],
-    ])('should generate diff with %s.%s and format %s', (file1, file2) => {
-      const filepath1 = getFixturePath(`${file1}.${fileFormat}`);
-      const filepath2 = getFixturePath(`${file2}.${fileFormat}`);
-      const expectedResult = getExpectedResult(file1, file2, outputFormat);
+describe.each(fileFormats)('genDiff with file format %s', (fileFormat) => {
+  test.each(outputFormats)('should generate diff for %s files with %s format', (outputFormat) => {
+    const filepath1 = getFixturePath(`file1.${fileFormat}`);
+    const filepath2 = getFixturePath(`file2.${fileFormat}`);
+    const expectedResult = getExpectedResult('file1', 'file2', outputFormat);
 
-      expect(genDiff(filepath1, filepath2, outputFormat, parseFile)).toEqual(expectedResult);
-    });
+    expect(genDiff(filepath1, filepath2, outputFormat, parseFile)).toEqual(expectedResult);
   });
 });

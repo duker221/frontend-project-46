@@ -1,9 +1,7 @@
 import _ from 'lodash';
 
-const createUniqueKeys = (before, after) => _.uniq([...Object.keys(before), ...Object.keys(after)]);
-
 const buildDiff = (before, after) => {
-  const keys = _.sortBy(createUniqueKeys(before, after));
+  const keys = _.sortBy(_.union(Object.keys(before), Object.keys(after)));
 
   const result = keys.map((key) => {
     if (_.isPlainObject(before[key]) && _.isPlainObject(after[key])) {
