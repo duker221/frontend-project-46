@@ -3,7 +3,6 @@ import plainFormatter from './plain.js';
 import formatJson from './json.js';
 
 const getFormatter = (formatName) => {
-
   switch (formatName) {
     case 'stylish':
       return stylishTreeFormat;
