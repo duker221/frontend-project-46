@@ -11,8 +11,6 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 
 const getExpectedResultFilename = (outputFormat) => `${outputFormat}_result.txt`;
 
-
-
 const getExpectedResult = (file1, file2, outputFormat) => {
   const expectedResultFilename = getExpectedResultFilename(outputFormat);
   return fs.readFileSync(getFixturePath(expectedResultFilename), 'utf-8');
